@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Once Animated - Kids' Storybook Creator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="has-background-white">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar is-white is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#home">
+                    <img src="./img/logo.png" alt="Once Animated Logo" style="max-height: 40px;">
+                    <strong class="ml-2 is-size-4 has-text-primary">Once Animated</strong>
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end align-items-center">
+                    <a class="navbar-item has-text-weight-semibold" href="#home">Home</a>
+                    <a class="navbar-item has-text-weight-semibold" href="#features">Features</a>
+                    <a class="navbar-item has-text-weight-semibold" href="#how-it-works">How It Works</a>
+                    <a class="navbar-item has-text-weight-semibold" href="#pricing">Plans</a>
+                    <a class="navbar-item has-text-weight-semibold js-modal-trigger" data-target="faqModal">FAQ</a>
+                    <a class="navbar-item has-text-weight-semibold" href="privacy_policy.html">Privacy Policy</a>
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary is-rounded has-text-weight-bold" href="https://play.google.com/store/apps/details?id=com.vinny.onceanimated" target="_blank" rel="noopener noreferrer">
+                                <span class="icon"><i class="fa-brands fa-google-play"></i></span>
+                                <span>Get App</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="section mt-6 has-background-warning-light" id="home">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-6">
+                    <span class="tag is-primary is-medium is-rounded mb-4">
+                        <i class="fa-brands fa-android mr-2"></i> Kids Storybook App
+                    </span>
+                    <h1 class="title is-1 has-text-dark">
+                        Create <span class="has-text-primary">Magical Stories</span> for Kids 🚀
+                    </h1>
+                    <p class="subtitle is-4 mt-3 has-text-dark">
+                        Turn children's imagination into enchanting stories with our interactive storybook creation app.
+                    </p>
+                    <div class="buttons mt-5">
+                        <a class="button is-primary is-large is-rounded has-text-weight-bold" href="https://play.google.com/store/apps/details?id=com.vinny.onceanimated" target="_blank" rel="noopener noreferrer">
+                            <span class="icon"><i class="fa-solid fa-rocket"></i></span>
+                            <span>Download Now</span>
+                        </a>
+                        <a class="button is-info is-light is-large is-rounded has-text-weight-bold" href="#features">
+                            <span>Explore Features</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="box p-3 has-background-white" style="border: 3px solid var(--bulma-warning); border-radius: 20px;">
+                        <div class="columns is-mobile">
+                            <div class="column is-6">
+                                <figure class="image">
+                                    <img src="./img/img1.png" alt="Once Animated Creation Screen" style="border-radius: 12px;">
+                                </figure>
+                            </div>
+                            <div class="column is-6">
+                                <figure class="image">
+                                    <img src="./img/img2.png" alt="Once Animated Reading Screen" style="border-radius: 12px;">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section has-background-primary-light" id="features">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="title is-2 has-text-dark">✨ Magical Features ✨</h2>
+                <p class="subtitle is-5 has-text-dark">Discover how Once Animated brings imagination to life with playful tools.</p>
+            </div>
+
+            <div class="columns is-multiline">
+                <div class="column is-3">
+                    <div class="box has-text-centered p-5 style-card">
+                        <span class="icon is-large has-text-primary mb-4">
+                            <i class="fa-solid fa-users fa-3x"></i>
+                        </span>
+                        <h3 class="title is-4">Magical Characters</h3>
+                        <p class="has-text-dark">Choose up to 5 charming characters to be the heroes of your story.</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="box has-text-centered p-5 style-card">
+                        <span class="icon is-large has-text-info mb-4">
+                            <i class="fa-solid fa-mountain-sun fa-3x"></i>
+                        </span>
+                        <h3 class="title is-4">Enchanted Scenarios</h3>
+                        <p class="has-text-dark">Select magical settings from magical forests to castles in the sky.</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="box has-text-centered p-5 style-card">
+                        <span class="icon is-large has-text-warning mb-4">
+                            <i class="fa-solid fa-wand-magic-sparkles fa-3x"></i>
+                        </span>
+                        <h3 class="title is-4">Magic Objects</h3>
+                        <p class="has-text-dark">Add up to 5 magic objects equipped with unique power-ups.</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="box has-text-centered p-5 style-card">
+                        <span class="icon is-large has-text-danger mb-4">
+                            <i class="fa-solid fa-bolt fa-3x"></i>
+                        </span>
+                        <h3 class="title is-4">Special Effects</h3>
+                        <p class="has-text-dark">Include enchanting special effects to make every page exciting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section has-background-info-light" id="how-it-works">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="title is-2 has-text-dark">🎈 How It Works 🎈</h2>
+                <p class="subtitle is-5 has-text-dark">Creating magical storybooks is simple and fun. Follow these three steps:</p>
+            </div>
+
+            <div class="columns">
+                <div class="column is-4">
+                    <div class="box p-5 has-text-centered">
+                        <span class="tag is-primary is-large is-rounded mb-4 has-text-weight-bold">Step 1</span>
+                        <h3 class="title is-4">Pick Your Heroes</h3>
+                        <p class="has-text-dark">Select up to 5 characters who will star as the main protagonists in your custom adventure.</p>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="box p-5 has-text-centered">
+                        <span class="tag is-info is-large is-rounded mb-4 has-text-weight-bold">Step 2</span>
+                        <h3 class="title is-4">Set the Scene</h3>
+                        <p class="has-text-dark">Choose your magical scenario and add special objects or effects to build the ideal world.</p>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="box p-5 has-text-centered">
+                        <span class="tag is-danger is-large is-rounded mb-4 has-text-weight-bold">Step 3</span>
+                        <h3 class="title is-4">Create & Read</h3>
+                        <p class="has-text-dark">Generate a 10-page illustrated story and enjoy reading or listening with automatic narration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section has-background-warning-light" id="pricing">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="title is-2 has-text-dark">🌟 Simple & Clear Plans 🌟</h2>
+                <p class="subtitle is-5 has-text-dark">Select the best option for your young storytellers.</p>
+            </div>
+
+            <div class="columns is-centered">
+                <div class="column is-5">
+                    <div class="box p-6">
+                        <h3 class="title is-3 has-text-centered">Free Plan</h3>
+                        <hr>
+                        <div class="content">
+                            <ul>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> Automatic voice narration</li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> Save up to 10 stories in library</li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> 25 characters included</li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> 15 scenarios included</li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> 15 magic objects</li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> 15 special effects</li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> <strong>70 total free items</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-5">
+                    <div class="box p-6 style-popular" style="border: 3px solid var(--bulma-primary);">
+                        <div class="has-text-centered mb-3">
+                            <span class="tag is-warning is-medium is-rounded has-text-weight-bold">⭐ Most Popular ⭐</span>
+                        </div>
+                        <h3 class="title is-3 has-text-centered has-text-primary">Pro Plan</h3>
+                        <hr>
+                        <div class="content">
+                            <ul>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> Automatic voice narration</li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> Includes all Free plan features</li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> <strong>Unlimited story creation</strong></li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> <strong>Export to MP3 audio</strong></li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> <strong>Export to PDF document</strong></li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> 60 exclusive PRO characters</li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> 12 exclusive PRO scenarios</li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> 12 exclusive PRO magic objects</li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> 12 exclusive PRO special effects</li>
+                                <li><i class="fa-solid fa-circle-check has-text-success mr-2"></i> <strong>96 total exclusive items</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section is-medium has-background-primary has-text-white">
+        <div class="container has-text-centered">
+            <h2 class="title is-2 has-text-white">Ready to Create Magical Stories?</h2>
+            <p class="subtitle is-4 has-text-white-ter mt-3">
+                Join thousands of parents, teachers, and kids using Once Animated to inspire imagination and reading.
+            </p>
+            <div class="buttons is-centered mt-5">
+                <a class="button is-warning is-large is-rounded has-text-dark has-text-weight-bold" href="https://play.google.com/store/apps/details?id=com.vinny.onceanimated" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="fa-solid fa-rocket"></i></span>
+                    <span>Download on Google Play</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer has-background-primary-light">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="is-flex align-items-center mb-3">
+                        <img src="./img/logo.png" alt="Once Animated Logo" style="max-height: 36px;">
+                        <strong class="ml-2 is-size-4 has-text-primary">Once Animated</strong>
+                    </div>
+                    <p class="has-text-dark">Creating magical stories to inspire children's imagination and spark a love for reading.</p>
+                </div>
+                <div class="column is-6 has-text-right-desktop">
+                    <p class="title is-6 has-text-dark">Quick Links</p>
+                    <p>
+                        <a href="#home" class="has-text-primary has-text-weight-semibold mr-3">Home</a>
+                        <a href="#features" class="has-text-primary has-text-weight-semibold mr-3">Features</a>
+                        <a class="has-text-primary has-text-weight-semibold mr-3 js-modal-trigger" data-target="faqModal">FAQ</a>
+                        <a href="privacy_policy.html" class="has-text-primary has-text-weight-semibold">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+            <hr class="has-background-primary-dark" style="opacity: 0.2;">
+            <div class="has-text-centered has-text-dark is-size-7">
+                &copy; 2026 Once Animated. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAQ Modal -->
+    <div class="modal" id="faqModal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head has-background-primary-light">
+                <p class="modal-card-title has-text-primary has-text-weight-bold">Frequently Asked Questions (FAQ)</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content">
+                    <h4 class="has-text-primary">1. How does story generation work in the app?</h4>
+                    <p>Once Animated creates custom stories automatically based on your selections. You choose characters, scenarios, magic objects, and effects, and our system generates a unique 10-page story with captivating text and titles.</p>
+
+                    <h4 class="has-text-primary">2. What free resources are available?</h4>
+                    <p>The app offers 25 characters, 15 scenarios, 15 magic objects, and 15 special effects completely free.</p>
+
+                    <h4 class="has-text-primary">3. What does the PRO package add?</h4>
+                    <p>The PRO package unlocks 60 exclusive characters, 12 special scenarios, 12 magic objects, 12 special effects, unlimited story creation, and MP3/PDF exports.</p>
+
+                    <h4 class="has-text-primary">4. How does story narration work?</h4>
+                    <p>Simply press the play button on the reading screen to listen to the story narrated with a clear and expressive voice.</p>
+
+                    <h4 class="has-text-primary">5. Can stories be read offline?</h4>
+                    <p>Yes! Once a story is generated online, it is saved in your personal library and can be read offline anytime.</p>
+
+                    <h4 class="has-text-primary">6. How do I save my favorite stories?</h4>
+                    <p>All created stories are automatically saved in your library. Tap the heart icon on any story to mark it as a favorite.</p>
+
+                    <h4 class="has-text-primary">7. Does the app work on tablets?</h4>
+                    <p>Yes, Once Animated is fully compatible with Android smartphones and tablets.</p>
+
+                    <h4 class="has-text-primary">8. Where do I find my generated stories?</h4>
+                    <p>All your stories are accessible anytime in the Library tab in the app's bottom menu.</p>
+
+                    <h4 class="has-text-primary">9. How can I export and share my stories?</h4>
+                    <p>With the PRO package, you can export and share your stories as PDF documents or MP3 audio files.</p>
+
+                    <h4 class="has-text-primary">10. Does the app consume a lot of mobile data?</h4>
+                    <p>Story generation requires an internet connection and uses a minimal amount of data. Reading saved stories offline uses zero data.</p>
+
+                    <h4 class="has-text-primary">11. How do I purchase the PRO package?</h4>
+                    <p>You can purchase the PRO package directly in the app store section using Google Play billing.</p>
+
+                    <h4 class="has-text-primary">12. Can I adjust the font size?</h4>
+                    <p>Yes, app settings allow you to customize font size for comfortable reading.</p>
+
+                    <h4 class="has-text-primary">13. What ages is the app recommended for?</h4>
+                    <p>Once Animated is designed for children aged 4 to 10, but fun for the whole family.</p>
+                </div>
+            </section>
+            <footer class="modal-card-foot has-background-white">
+                <button class="button is-primary is-rounded has-text-weight-bold">Close</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Navbar & Modal Interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar Burger Toggle
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+                });
+            });
+
+            // Modal Handlers
+            function openModal($el) {
+                if ($el) $el.classList.add('is-active');
+            }
+            function closeModal($el) {
+                if ($el) $el.classList.remove('is-active');
+            }
+
+            (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+                const modal = $trigger.dataset.target;
+                const $target = document.getElementById(modal);
+                $trigger.addEventListener('click', () => {
+                    openModal($target);
+                });
+            });
+
+            (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+                const $target = $close.closest('.modal');
+                $close.addEventListener('click', () => {
+                    closeModal($target);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
