@@ -1,839 +1,1225 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F86V31NCX9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F86V31NCX9');
+</script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vinny</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconnect & Resource Hints for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <!-- Primary Meta Tags -->
+    <title>Vinny | phpBB Specialist & Extension Developer</title>
+    <meta name="title" content="Vinny | phpBB Specialist & Extension Developer">
+    <meta name="description" content="Official website of Vinny — phpBB specialist building extensions, open-source tools, and custom forum solutions for real communities.">
+    <meta name="author" content="Vinny">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vinny.github.io/">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vinny.github.io/">
+    <meta property="og:title" content="Vinny | phpBB Specialist & Extension Developer">
+    <meta property="og:description" content="phpBB extensions, open-source tools, and custom forum solutions built with solid structure and careful security.">
+    <meta property="og:image" content="https://vinny.github.io/favicon.ico">
+    <meta property="og:site_name" content="Vinny | phpBB Extensions">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://vinny.github.io/">
+    <meta name="twitter:title" content="Vinny | phpBB Specialist & Extension Developer">
+    <meta name="twitter:description" content="phpBB extensions, open-source tools, and custom forum solutions built for real communities.">
+    <meta name="twitter:image" content="https://vinny.github.io/favicon.ico">
+
+    <!-- Bulma CSS v1.0.4 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    
+    <!-- Google Fonts with display=swap for high LCP -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Outfit:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons Script (Deferred for Non-blocking Render) -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <!-- Structured Data: JSON-LD (Person & SoftwareApplications) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://vinny.github.io/#person",
+          "name": "Vinny",
+          "url": "https://vinny.github.io/",
+          "jobTitle": "phpBB Extension Specialist & Developer",
+          "sameAs": [
+            "https://github.com/vinny",
+            "https://www.phpbb.com/community/ucp.php?i=pm&mode=compose&u=1065865"
+          ],
+          "knowsAbout": [
+            "PHP 8.1 - 8.3",
+            "phpBB Architecture",
+            "phpBB Extension Development",
+            "Twig Templating Engine",
+            "Web Application Security",
+            "MySQL & Database Migrations"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://vinny.github.io/#website",
+          "url": "https://vinny.github.io/",
+          "name": "Vinny | phpBB Extensions Specialist",
+          "publisher": {
+            "@id": "https://vinny.github.io/#person"
+          }
+        }
+      ]
+    }
+    </script>
+
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            --secondary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --accent-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            --glass-bg: rgba(255, 255, 255, 0.15);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.08);
+            /* WCAG 2.2 AAA Contrast Colors (Indigo theme) */
+            --bulma-primary: #3730a3;         /* Deep Indigo (WCAG 7.2:1 with White) */
+            --bulma-primary-h: 243deg;
+            --bulma-primary-s: 54%;
+            --bulma-primary-l: 41%;
+
+            --bulma-link: #1e40af;            /* High Contrast Royal Blue (7.5:1) */
+            --bulma-success: #065f46;         /* High Contrast Dark Emerald (7.1:1) */
+            --bulma-warning: #92400e;         /* High Contrast Amber/Brown (6.8:1) */
+            --bulma-info: #075985;            /* High Contrast Dark Cyan (7.0:1) */
+
+            --bulma-text: #0f172a;            /* Slate 900 */
+            --bulma-text-secondary: #1e293b;  /* Slate 800 (High contrast body text 8.5:1) */
+            --bulma-title-color: #020617;     /* Slate 950 */
+            --bulma-body-background-color: #f8fafc;
+
+            --surface-card: #ffffff;
+            --surface-border: #94a3b8;        /* Slate 400 - Clear high-contrast borders */
+            --surface-border-hover: #475569;
+
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.08);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-hover: 0 20px 35px -5px rgb(55 48 163 / 0.16);
         }
 
         html {
             scroll-behavior: smooth;
         }
 
-        body, button, input, select, textarea {
-            font-family: 'Work Sans', sans-serif;
+        body {
+            font-family: 'Work Sans', system-ui, -apple-system, sans-serif;
+            color: var(--bulma-text);
+            line-height: 1.6;
         }
 
-        .title, .subtitle, .mono-font {
-            font-family: 'Space Grotesk', sans-serif;
+        /* High Contrast Overrides for Text & Subtitles (Cross-Browser Edge & Chrome) */
+        :root {
+            color-scheme: light !important;
         }
 
-        /* Progress Bar */
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 4px;
-            background: var(--accent-gradient);
-            z-index: 9999;
-            transition: width 0.1s ease;
+        body, html {
+            color-scheme: light !important;
+            color: #0f172a !important;
         }
 
-        /* Hero Section */
-        .hero-gradient {
-            background: var(--primary-gradient);
-            position: relative;
-            overflow: hidden;
+        /* Force Unbreakable High-Contrast Text Rules across Chrome, Edge, Safari, Firefox */
+        .title {
+            font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+            letter-spacing: -0.025em;
+            color: #0f172a !important;
         }
 
-        /* Glassmorphism Cards */
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-soft);
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .glass-card .card-content {
-            flex-grow: 1;
+        .title.has-text-primary, .title .has-text-primary, span.has-text-primary, .has-text-primary {
+            color: #3730a3 !important;        /* Deep Indigo (WCAG 7.2:1) */
         }
 
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        .title.has-text-info, .title .has-text-info, span.has-text-info, .has-text-info {
+            color: #075985 !important;        /* Dark Cyan (WCAG 7.0:1) */
         }
 
-        /* Typewriter Effect */
-        .typewriter {
-            overflow: hidden;
-            white-space: nowrap;
-            margin: 0 auto;
-            border-right: 2px solid white;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        .title.has-text-success, .title .has-text-success, span.has-text-success, .has-text-success {
+            color: #065f46 !important;        /* Dark Emerald (WCAG 7.1:1) */
         }
 
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+        .title.has-text-warning, .title .has-text-warning, span.has-text-warning, .has-text-warning {
+            color: #78350f !important;        /* Dark Amber (WCAG 7.0:1) */
         }
 
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: white; }
+        .subtitle, .has-text-grey-dark {
+            color: #334155 !important;        /* Slate 700 */
+            font-weight: 500;
         }
 
-        /* Animations */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease;
+        .is-size-7.has-text-grey-dark {
+            color: #1e293b !important;        /* Slate 800 */
+            font-weight: 600;
         }
 
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stagger-item {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.6s ease;
-        }
-
-        .stagger-item.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Enhanced Timeline */
-        .timeline-enhanced {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .timeline-enhanced::before {
-            content: '';
-            position: absolute;
-            left: 1rem;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: var(--accent-gradient);
-            border-radius: 2px;
-        }
-
-        .timeline-item-enhanced {
-            position: relative;
-            margin-bottom: 3rem;
-        }
-
-        .timeline-item-enhanced::before {
-            content: '';
-            position: absolute;
-            left: -2.2rem;
-            top: 1rem;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--accent-gradient);
-            border: 3px solid white;
-        }
-
-        /* Enhanced Buttons */
-        .btn-enhanced {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-enhanced::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-enhanced:hover::before {
-            left: 100%;
-        }
-
-        /* Responsive Typography */
-        .hero-title {
-            font-size: clamp(2.5rem, 8vw, 4rem);
+        /* High Contrast Tags & Badges */
+        .tag.is-primary.is-light {
+            background-color: #eef2ff !important;
+            color: #312e81 !important;        /* Slate Indigo (Contrast 11:1) */
             font-weight: 700;
-            letter-spacing: -0.02em;
         }
 
-        /* Pulse Animation */
-        .pulse {
-            animation: pulse 2s infinite;
+        .tag.is-success.is-light {
+            background-color: #ecfdf5 !important;
+            color: #065f46 !important;        /* Dark Emerald (Contrast 9.5:1) */
+            font-weight: 700;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        .tag.is-info.is-light {
+            background-color: #f0f9ff !important;
+            color: #075985 !important;        /* Dark Cyan (Contrast 10:1) */
+            font-weight: 700;
         }
 
-        /* Footer */
-        .footer-gradient {
-            background: var(--primary-gradient);
+        .tag.is-warning.is-light {
+            background-color: #fffbeb !important;
+            color: #78350f !important;        /* Dark Amber (Contrast 10.5:1) */
+            font-weight: 700;
         }
 
-        /* Ko-fi Widget Container */
-        #kofi-widget-container {
-            margin: 20px 0;
-            min-height: 100px;
-            display: flex;
-            justify-content: center;
+        /* Card Inner Box Banner Text Contrast */
+        .has-background-primary-light p {
+            color: #312e81 !important;
+            font-weight: 700;
+        }
+
+        .has-background-info-light p {
+            color: #075985 !important;
+            font-weight: 700;
+        }
+
+        .has-background-warning-light p {
+            color: #78350f !important;
+            font-weight: 700;
+        }
+
+        /* Skip Link for Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 10px;
+            background: var(--bulma-primary);
+            color: #ffffff;
+            padding: 8px 16px;
+            z-index: 10000;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            transition: top 0.2s ease;
+        }
+
+        .skip-link:focus {
+            top: 10px;
+            outline: 3px solid #f59e0b;
+        }
+
+        /* Keyboard Focus Indicator */
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+            outline: 3px solid #3730a3 !important;
+            outline-offset: 3px !important;
+        }
+
+        .mono-font, code {
+            font-family: 'JetBrains Mono', monospace;
+            color: #1e1b4b;
+        }
+
+        /* ---------------------------------------------------- */
+        /* PREMIUM POLISH & MICRO-INTERACTIONS                  */
+        /* ---------------------------------------------------- */
+
+        /* Smooth Navbar Link Underline Indicator */
+        .navbar-item {
+            position: relative;
+            color: #0f172a !important;
+            font-weight: 600;
+            transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar-item::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 12px;
+            right: 12px;
+            height: 2px;
+            background-color: var(--bulma-primary);
+            border-radius: 2px;
+            opacity: 0;
+            transform: scaleX(0);
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .navbar-item:hover::after,
+        .navbar-item:focus-visible::after {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+
+        /* Card Micro-interactions (GPU Accelerated) */
+        .style-card {
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                        box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                        border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            background: var(--surface-card);
+            border: 1.5px solid var(--surface-border);
+            border-radius: var(--radius-md);
+            will-change: transform, box-shadow;
+        }
+
+        .style-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--surface-border-hover);
+        }
+
+        /* Icon Box Hover Accent Effect */
+        .icon-box {
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-sm);
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .timeline-enhanced {
-                padding-left: 2rem;
+        .style-card:hover .icon-box {
+            transform: scale(1.08);
+        }
+
+        /* Button Hover Lift & Active Press Feedback */
+        .button {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                        box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                        background-color 0.2s ease;
+            will-change: transform;
+        }
+
+        .button.is-primary {
+            background-color: #3730a3 !important;
+            color: #ffffff !important;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .button:active {
+            transform: translateY(0px) scale(0.98);
+        }
+
+        /* WCAG Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
             }
-            
-            .timeline-item-enhanced::before {
-                left: -1.5rem;
-                width: 12px;
-                height: 12px;
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+                transform: none !important;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Progress Bar -->
-    <div class="progress-bar" id="progressBar"></div>
-
-    <!-- Hero Section -->
-    <section class="hero is-large hero-gradient">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="columns is-vcentered">
-                    <div class="column">
-                        <h1 class="title hero-title has-text-white typewriter mono-font">
-                            💻 Vinny
-                        </h1>
-                        <div class="buttons is-centered mt-6 fade-in-up">
-                            <a href="#about" class="button is-white is-outlined is-large btn-enhanced">
-                                <span class="icon">👤</span>
-                                <span data-translate="hero_button_about">Sobre Mim</span>
-                            </a>
-                            <a href="#projects" class="button is-warning is-large btn-enhanced pulse">
-                                <span class="icon">🚀</span>
-                                <span data-translate="hero_button_projects">Projetos</span>
-                            </a>
-                            <a href="#donate" class="button is-success is-large btn-enhanced">
-                                <span class="icon">❤️</span>
-                                <span data-translate="hero_button_support">Apoiar</span>
-                            </a>
+    <!-- 1. NAVIGATION BAR (Header Landmark) -->
+    <header>
+        <nav class="navbar is-white is-fixed-top" style="border-bottom: 1px solid var(--surface-border);" role="navigation" aria-label="main navigation">
+            <div class="container is-max-widescreen">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="#home" aria-label="Vinny Homepage">
+                        <div class="icon-box p-2 has-background-primary-light has-text-primary mr-2" style="border-radius: 8px;">
+                            <i data-lucide="code-2" aria-hidden="true" style="width: 20px; height: 20px;"></i>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <strong class="is-size-4 title mb-0 has-text-primary">Vinny</strong>
+                    </a>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8 is-offset-2">
-                    <h2 class="title is-2 has-text-centered mb-6 fade-in-up" data-translate="about_title">
-                        👨‍💻 Sobre Mim
-                    </h2>
-                    <div class="content is-large has-text-centered mb-6 fade-in-up">
-                        <p data-translate="about_text">Entusiasta da comunidade phpBB há mais de uma década, tenho o desenvolvimento de software como um hobby. Dedico meu tempo livre à criação de extensões, estilos e traduções, com o objetivo de tornar os fóruns mais acessíveis e funcionais para todos.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section has-background-light">
-        <div class="container">
-            <h2 class="title is-2 has-text-centered mb-6 fade-in-up" data-translate="projects_title">
-                🚀 Projetos para phpBB
-            </h2>
-            <div class="columns is-multiline is-centered">
-                <!-- Project 1: Tradução -->
-                <div class="column is-one-third stagger-item">
-                    <div class="card glass-card">
-                        <div class="card-content">
-                            <h3 class="title is-4" data-translate="project_translation_title">🌐 Tradução para PT-BR</h3>
-                            <p class="mb-4" data-translate="project_translation_desc">A tradução oficial que torna o phpBB totalmente acessível para a comunidade de língua portuguesa.</p>
-                            <div class="tags">
-                                <span class="tag is-primary" data-translate="project_translation_tag1">Tradução</span>
-                                <span class="tag is-info" data-translate="project_translation_tag2">Localização</span>
-                            </div>
-                        </div>
-                        <footer class="card-footer p-2">
-                           <a href="https://www.phpbb.com/customise/db/translation/brazilian_portuguese/" target="_blank" class="button is-link is-light is-fullwidth btn-enhanced" data-translate="project_button_view">Ver Projeto</a>
-                        </footer>
-                    </div>
+                    <button class="navbar-burger" aria-label="Toggle navigation menu" aria-expanded="false" data-target="navbarMain">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </button>
                 </div>
 
-                <!-- Project 2: Share On -->
-                <div class="column is-one-third stagger-item">
-                    <div class="card glass-card">
-                        <div class="card-content">
-                            <h3 class="title is-4" data-translate="project_shareon_title">🔗 Share On</h3>
-                            <p class="mb-4" data-translate="project_shareon_desc">Extensão que permite compartilhar tópicos do fórum em diversas redes sociais com facilidade.</p>
-                             <div class="tags">
-                                <span class="tag is-success" data-translate="project_tag_extension">Extensão</span>
-                                <span class="tag is-warning" data-translate="project_shareon_tag2">Redes Sociais</span>
-                            </div>
-                        </div>
-                        <footer class="card-footer p-2">
-                           <a href="https://www.phpbb.com/customise/db/extension/shareon/" target="_blank" class="button is-link is-light is-fullwidth btn-enhanced" data-translate="project_button_view">Ver Projeto</a>
-                        </footer>
-                    </div>
-                </div>
-
-                <!-- Project 3: Youtube Gallery -->
-                <div class="column is-one-third stagger-item">
-                    <div class="card glass-card">
-                        <div class="card-content">
-                            <h3 class="title is-4" data-translate="project_ytgallery_title">🎥 YouTube Videos Gallery</h3>
-                            <p class="mb-4" data-translate="project_ytgallery_desc">Cria uma galeria de vídeos do YouTube diretamente no fórum, organizando o conteúdo de forma visual.</p>
-                             <div class="tags">
-                                <span class="tag is-success" data-translate="project_tag_extension">Extensão</span>
-                                <span class="tag is-danger">YouTube</span>
-                            </div>
-                        </div>
-                         <footer class="card-footer p-2">
-                           <a href="https://www.phpbb.com/customise/db/extension/youtube_videos_gallery/" target="_blank" class="button is-link is-light is-fullwidth btn-enhanced" data-translate="project_button_view">Ver Projeto</a>
-                        </footer>
-                    </div>
-                </div>
-                
-                <!-- Project 4: Giphy -->
-                <div class="column is-one-third stagger-item">
-                    <div class="card glass-card">
-                        <div class="card-content">
-                            <h3 class="title is-4" data-translate="project_giphy_title">✨ Giphy</h3>
-                            <p class="mb-4" data-translate="project_giphy_desc">Integra a busca de GIFs do Giphy diretamente no editor de postagens, tornando as conversas mais dinâmicas.</p>
-                             <div class="tags">
-                                <span class="tag is-success" data-translate="project_tag_extension">Extensão</span>
-                                <span class="tag is-info">GIFs</span>
-                            </div>
-                        </div>
-                         <footer class="card-footer p-2">
-                           <a href="https://www.phpbb.com/community/viewtopic.php?t=2663497" target="_blank" class="button is-link is-light is-fullwidth btn-enhanced" data-translate="project_button_view">Ver Projeto</a>
-                        </footer>
-                    </div>
-                </div>
-
-                <!-- Project 5: Feed Post Bot -->
-                <div class="column is-one-third stagger-item">
-                    <div class="card glass-card">
-                        <div class="card-content">
-                            <h3 class="title is-4" data-translate="project_feedbot_title">🤖 Feed Post Bot</h3>
-                            <p class="mb-4" data-translate="project_feedbot_desc">Um bot que posta automaticamente conteúdo de feeds RSS/Atom em um fórum específico.</p>
-                             <div class="tags">
-                                <span class="tag is-success" data-translate="project_tag_extension">Extensão</span>
-                                <span class="tag is-dark" data-translate="project_feedbot_tag2">Bot</span>
-                                <span class="tag is-warning" data-translate="project_feedbot_tag3">Automação</span>
-                            </div>
-                        </div>
-                         <footer class="card-footer p-2">
-                           <a href="https://www.phpbb.com/customise/db/extension/feedpostbot/" target="_blank" class="button is-link is-light is-fullwidth btn-enhanced" data-translate="project_button_view">Ver Projeto</a>
-                        </footer>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- References Section -->
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-10 is-offset-1">
-                    <h2 class="title is-2 has-text-centered mb-6 fade-in-up" data-translate="references_title">
-                        🏆 Referências
-                    </h2>
-                    <div class="timeline-enhanced">
-                        <div class="timeline-item-enhanced stagger-item">
-                            <div class="glass-card p-5">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-64x64">
-                                            <span class="icon is-large has-text-info" style="font-size: 3rem;">🌍</span>
-                                        </figure>
-                                    </div>
-                                    <div class="media-content">
-                                        <p class="title is-4" data-translate="ref_item1_title">phpBB International Support Teams</p>
-                                        <p class="subtitle is-6 has-text-grey mono-font" data-translate="ref_item1_subtitle">2011 - presente • 13+ anos</p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <p data-translate="ref_item1_desc">Membro ativo das equipes internacionais de suporte do phpBB, ajudando usuários ao redor do mundo com questões técnicas e administrativas.</p>
-                                    <div class="tags mt-3">
-                                        <span class="tag is-info" data-translate="ref_item1_tag1">Support</span>
-                                        <span class="tag is-primary" data-translate="ref_item1_tag2">International</span>
-                                        <span class="tag is-link" data-translate="ref_item1_tag3">Community</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item-enhanced stagger-item">
-                            <div class="glass-card p-5">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-64x64">
-                                            <span class="icon is-large has-text-success" style="font-size: 3rem;">🌐</span>
-                                        </figure>
-                                    </div>
-                                    <div class="media-content">
-                                        <p class="title is-4" data-translate="ref_item2_title">phpBB Translator - Português Brasileiro</p>
-                                        <p class="subtitle is-6 has-text-grey mono-font" data-translate="ref_item2_subtitle">Co-autor • 2011 - presente</p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <p data-translate="ref_item2_desc">Co-autor da tradução oficial do phpBB para português brasileiro, responsável por manter a localização atualizada e culturalmente apropriada.</p>
-                                    <div class="tags mt-3">
-                                        <span class="tag is-success" data-translate="ref_item2_tag1">Translation</span>
-                                        <span class="tag is-danger" data-translate="ref_item2_tag2">Portuguese</span>
-                                        <span class="tag is-info" data-translate="ref_item2_tag3">Localization</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item-enhanced stagger-item">
-                            <div class="glass-card p-5">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-64x64">
-                                            <span class="icon is-large has-text-warning" style="font-size: 3rem;">✅</span>
-                                        </figure>
-                                    </div>
-                                    <div class="media-content">
-                                        <p class="title is-4" data-translate="ref_item3_title">phpBB Jr. Style Validators</p>
-                                        <p class="subtitle is-6 has-text-grey mono-font" data-translate="ref_item3_subtitle">Jun 2011 - Set 2011</p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <p data-translate="ref_item3_desc">Validador júnior de estilos phpBB, responsável por garantir qualidade, compatibilidade e conformidade dos temas submetidos.</p>
-                                    <div class="tags mt-3">
-                                        <span class="tag is-warning" data-translate="ref_item3_tag1">Validation</span>
-                                        <span class="tag is-dark" data-translate="ref_item3_tag2">Quality Control</span>
-                                        <span class="tag is-primary" data-translate="ref_item3_tag3">Styles</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item-enhanced stagger-item">
-                            <div class="glass-card p-5">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-64x64">
-                                            <span class="icon is-large has-text-primary" style="font-size: 3rem;">🎨</span>
-                                        </figure>
-                                    </div>
-                                    <div class="media-content">
-                                        <p class="title is-4" data-translate="ref_item4_title">phpBB Styles Team Member</p>
-                                        <p class="subtitle is-6 has-text-grey mono-font" data-translate="ref_item4_subtitle">Set 2011 - presente • 12+ anos</p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <p data-translate="ref_item4_desc">Membro oficial da equipe de estilos do phpBB, desenvolvendo e mantendo temas oficiais para a plataforma, além de revisar contribuições da comunidade.</p>
-                                    <div class="tags mt-3">
-                                        <span class="tag is-link" data-translate="ref_item4_tag1">Development</span>
-                                        <span class="tag is-primary" data-translate="ref_item4_tag2">Design</span>
-                                        <span class="tag is-success" data-translate="ref_item4_tag3">Official Team</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item-enhanced stagger-item">
-                            <div class="glass-card p-5">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-64x64">
-                                            <span class="icon is-large has-text-danger" style="font-size: 3rem;">🇧🇷</span>
-                                        </figure>
-                                    </div>
-                                    <div class="media-content">
-                                        <p class="title is-4" data-translate="ref_item5_title">Suporte phpBB</p>
-                                        <p class="subtitle is-6 has-text-grey mono-font" data-translate="ref_item5_subtitle">Administrador • 2011 - presente</p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <p data-translate="ref_item5_desc">Administrador do principal fórum de suporte phpBB em português brasileiro, oferecendo suporte técnico e gerenciando a comunidade.</p>
-                                    <div class="tags mt-3">
-                                        <span class="tag is-danger" data-translate="ref_item5_tag1">Administration</span>
-                                        <span class="tag is-link" data-translate="ref_item5_tag2">Community</span>
-                                        <span class="tag is-success" data-translate="ref_item5_tag3">Brazil</span>
-                                    </div>
-                                    <br>
-                                    <a href="https://www.suportephpbb.com.br" class="button is-small is-primary mt-3 btn-enhanced" target="_blank">
-                                        <span class="icon">🔗</span>
-                                        <span data-translate="ref_item5_button_visit">Visitar Fórum</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Donate Section -->
-    <section id="donate" class="section has-background-light">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8 is-offset-2">
-                    <div class="glass-card p-6 has-text-centered fade-in-up">
-                        <div class="content">
-                            <h2 class="title is-3" data-translate="donate_title">
-                                💝 Apoie Meu Trabalho
-                            </h2>
-                            <p class="is-size-5 mb-5" data-translate="donate_text">
-                                Se você gosta das minhas extensões e estilos e quer demonstrar apreço, ou apoiar o desenvolvimento de novas extensões, você pode fazer uma doação.
-                            </p>
-                            
-                            <!-- Ko-fi Widget -->
-                            <div id="kofi-widget-container">
-                                <a href="https://ko-fi.com/J3J51IS0BE" target="_blank" class="button is-primary is-large btn-enhanced">
-                                    <span class="icon">☕</span>
-                                    <span data-translate="kofi_button_text">Apoiar no Ko-fi</span>
+                <div id="navbarMain" class="navbar-menu">
+                    <div class="navbar-end is-align-items-center">
+                        <a class="navbar-item has-text-weight-semibold" href="#home">Home</a>
+                        <a class="navbar-item has-text-weight-semibold" href="#extensions">Extensions</a>
+                        <a class="navbar-item has-text-weight-semibold" href="#contributions">Contributions</a>
+                        <a class="navbar-item has-text-weight-semibold" href="#services">Custom Services</a>
+                        <a class="navbar-item has-text-weight-semibold" href="#donate">Support</a>
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a class="button is-primary is-rounded has-text-weight-bold" href="#extensions">
+                                    <i data-lucide="puzzle" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i>
+                                    <span>Get Extensions</span>
+                                </a>
+                                <a class="button is-outlined is-rounded has-text-weight-bold" href="https://www.phpbb.com/community/ucp.php?i=pm&mode=compose&u=1065865" target="_blank" rel="noopener noreferrer" style="border-color: #3730a3; color: #3730a3;">
+                                    <i data-lucide="message-square" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i>
+                                    <span>Contact PM</span>
                                 </a>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </nav>
+    </header>
 
-    <!-- Footer -->
-    <footer class="footer footer-gradient">
-        <div class="content has-text-centered has-text-white">
-            <p class="is-size-5">
-                <strong class="has-text-white mono-font">Vinny</strong>
-            </p>
-            <div class="buttons is-centered mt-4">
-                <a href="https://github.com/vinny" target="_blank" class="button is-white is-outlined btn-enhanced">
-                    <span class="icon">🐱</span>
-                    <span data-translate="footer_github">GitHub</span>
-                </a>
-                <a href="https://x.com/marcusvinny" target="_blank" class="button is-white is-outlined btn-enhanced">
-                    <span class="icon">🐦</span>
-                    <span data-translate="footer_twitter">X</span>
-                </a>
+    <!-- MAIN LANDMARK -->
+    <main id="main-content">
+
+        <!-- 2. HERO SECTION -->
+        <section class="section py-7 mt-6" id="home" aria-labelledby="hero-title">
+            <div class="container is-max-widescreen">
+                <div class="columns is-vcentered">
+                    <div class="column is-7-desktop">
+                        <div class="is-flex is-align-items-center gap-2 mb-4">
+                            <span class="tag is-primary is-light is-medium is-rounded font-weight-semibold">
+                                <i data-lucide="puzzle" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i>
+                                Extension Developer
+                            </span>
+                            <span class="tag is-success is-light is-medium is-rounded font-weight-semibold">
+                                <i data-lucide="check-circle-2" aria-hidden="true" class="mr-2" style="width: 14px; height: 14px;"></i>
+                                phpBB Specialist
+                            </span>
+                        </div>
+
+                        <h1 id="hero-title" class="title is-1 is-size-2-mobile mb-4">
+                            <span class="has-text-primary">phpBB Extensions</span> & Custom Forum Solutions.
+                        </h1>
+
+                        <p class="subtitle is-4 is-size-5-mobile mb-5" style="max-width: 640px; color: #334155;">
+                            Hey there! I'm Vinny. I’ve been working with phpBB for over 15 years, building phpBB extensions, tools, and custom forum solutions that are secure, fast, and practical.
+                        </p>
+
+                        <!-- Metrics bar -->
+                        <div class="columns is-mobile is-multiline mt-5 pt-4" style="border-top: 1px solid var(--surface-border);">
+                            <div class="column is-6-tablet is-6-mobile">
+                                <p class="title is-3 mb-1 has-text-primary">100%</p>
+                                <p class="is-size-7 font-weight-semibold" style="color: #1e293b;">phpBB Coding Standards</p>
+                            </div>
+                            <div class="column is-6-tablet is-6-mobile">
+                                <p class="title is-3 mb-1 has-text-primary">3.3+</p>
+                                <p class="is-size-7 font-weight-semibold" style="color: #1e293b;">phpBB 3.3 & 4 Ready</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Prominent Quick Actions Card -->
+                    <div class="column is-5-desktop mt-4 mt-0-desktop">
+                        <div class="box p-6 style-card has-background-white" style="border-radius: var(--radius-lg); border: 2px solid var(--bulma-primary);">
+                            <div class="is-flex is-align-items-center mb-4">
+                                <div class="icon-box p-3 has-background-primary-light has-text-primary mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="zap" aria-hidden="true" style="width: 28px; height: 28px;"></i>
+                                </div>
+                                <div>
+                                    <h2 class="title is-4 mb-0">Quick Actions</h2>
+                                    <p class="is-size-7 font-weight-semibold" style="color: #475569;">Explore tools & custom services</p>
+                                </div>
+                            </div>
+
+                            <div class="buttons is-flex is-flex-direction-column gap-3">
+                                <a class="button is-primary is-fullwidth is-large is-rounded has-text-weight-bold" href="#extensions">
+                                    <i data-lucide="shopping-bag" aria-hidden="true" class="mr-2" style="width: 20px; height: 20px;"></i>
+                                    <span>Premium Extensions</span>
+                                </a>
+                                <a class="button is-light is-fullwidth is-large is-rounded has-text-weight-semibold" href="#services">
+                                    <i data-lucide="wrench" aria-hidden="true" class="mr-2" style="width: 20px; height: 20px;"></i>
+                                    <span>Custom Services</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="mt-4">
-                <span data-translate="footer_made_with">Feito com</span> 
-                <a href="https://bulma.io" target="_blank" class="has-text-white is-inline-flex is-align-items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                    <span>Bulma</span>
-                </a>
-            </p>
+        </section>
+
+        <!-- 3. PREMIUM phpBB EXTENSIONS SHOWCASE -->
+        <section class="section py-7 has-background-white" id="extensions" aria-labelledby="extensions-title">
+            <div class="container is-max-widescreen">
+                <div class="has-text-centered mb-7">
+                    <span class="tag is-primary is-light is-medium is-rounded mb-3">
+                        <i data-lucide="puzzle" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i>
+                        phpBB Store
+                    </span>
+                    <h2 id="extensions-title" class="title is-2 is-size-3-mobile">
+                        Premium <span class="has-text-primary">phpBB Extensions</span>
+                    </h2>
+                    <p class="subtitle is-5 mt-3 mx-auto" style="max-width: 640px; color: #334155;">
+                        Extensions for phpBB 3.3 built to run smoothly on your forum and prepared for phpBB 4.
+                    </p>
+                </div>
+
+                <div class="columns is-multiline mb-6">
+                    <!-- Extension 1: Smart Loading -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 is-flex is-flex-direction-column style-card h-100">
+                            <div class="is-flex is-justify-content-space-between is-align-items-center mb-3">
+                                <span class="tag is-success is-light is-rounded font-weight-semibold">phpBB 3.3 & 4.0</span>
+                                <span class="is-size-7 font-weight-bold mono-font" style="color: #1e293b;">v1.0.0</span>
+                            </div>
+                            
+                            <h3 class="title is-4 mb-2">Smart Loading</h3>
+                            <p class="is-size-6 mb-4" style="color: #334155;">
+                                A content loading system for phpBB with infinite scrolling, pagination, caching, and smoother navigation.
+                            </p>
+
+                            <div class="box p-4 mb-4 has-background-primary-light has-text-centered" style="border-radius: 10px;">
+                                <i data-lucide="zap" aria-hidden="true" class="has-text-primary" style="width: 44px; height: 44px;"></i>
+                                <p class="is-size-7 font-weight-bold mt-2" style="color: #312e81;">Infinite Scroll & Easy Navigation</p>
+                            </div>
+
+                            <div class="content is-small mb-5 flex-grow-1">
+                                <ul class="ml-0 pl-0" style="list-style: none;">
+                                    <li class="mb-2" style="color: #1e293b;"><i data-lucide="check" aria-hidden="true" class="has-text-success mr-2" style="width: 16px; height: 16px;"></i> Infinite Scrolling</li>
+                                    <li class="mb-2" style="color: #1e293b;"><i data-lucide="check" aria-hidden="true" class="has-text-success mr-2" style="width: 16px; height: 16px;"></i> Caching & ACP Controls</li>
+                                    <li class="mb-2" style="color: #1e293b;"><i data-lucide="check" aria-hidden="true" class="has-text-success mr-2" style="width: 16px; height: 16px;"></i> Built for phpBB 3.3 and ready for 4.0</li>
+                                </ul>
+                            </div>
+
+                            <div class="pt-3 border-top style-card-footer">
+                                <div class="is-flex is-justify-content-space-between is-align-items-center mb-3">
+                                    <div>
+                                        <span class="is-size-7 font-weight-bold display-block" style="color: #475569;">Single License</span>
+                                        <span class="title is-4 has-text-dark mb-0">$19.90</span>
+                                    </div>
+                                    <span class="tag is-light is-rounded font-weight-bold" style="color: #1e293b;">Instant Access</span>
+                                </div>
+                                <a href="https://www.phpbb.com/community/ucp.php?i=pm&mode=compose&u=1065865" target="_blank" rel="noopener noreferrer" class="button is-primary is-fullwidth is-rounded has-text-weight-bold" aria-label="Get Smart Loading Extension">
+                                    <i data-lucide="shopping-cart" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i>
+                                    <span>Get Extension</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Extension 2: WYSIWYG Editor (Featured) -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 is-flex is-flex-direction-column style-card h-100" style="border: 2.5px solid var(--bulma-primary); position: relative;">
+                            <div style="position: absolute; top: -14px; right: 20px;">
+                                <span class="tag is-warning has-text-weight-bold is-rounded" style="background-color: #f59e0b; color: #000000;">Most Popular</span>
+                            </div>
+
+                            <div class="is-flex is-justify-content-space-between is-align-items-center mb-3">
+                                <span class="tag is-info is-light is-rounded font-weight-semibold">phpBB 3.3 & 4.0</span>
+                                <span class="is-size-7 font-weight-bold mono-font" style="color: #1e293b;">v1.0.0</span>
+                            </div>
+                            
+                            <h3 class="title is-4 mb-2">WYSIWYG Editor</h3>
+                            <p class="is-size-6 mb-4" style="color: #334155;">
+                                A TipTap-powered WYSIWYG editor for phpBB that works naturally with BBCode.
+                            </p>
+
+                            <div class="box p-4 mb-4 has-background-info-light has-text-centered" style="border-radius: 10px;">
+                                <i data-lucide="edit-3" aria-hidden="true" class="has-text-info" style="width: 44px; height: 44px;"></i>
+                                <p class="is-size-7 font-weight-bold mt-2" style="color: #075985;">TipTap Rich Text & BBCode Engine</p>
+                            </div>
+
+                            <div class="content is-small mb-5 flex-grow-1">
+                                <ul class="ml-0 pl-0" style="list-style: none;">
+                                    <li class="mb-2" style="color: #1e293b;"><i data-lucide="check" aria-hidden="true" class="has-text-success mr-2" style="width: 16px; height: 16px;"></i> TipTap Rich Text Editor</li>
+                                    <li class="mb-2" style="color: #1e293b;"><i data-lucide="check" aria-hidden="true" class="has-text-success mr-2" style="width: 16px; height: 16px;"></i> Native BBCode Integration</li>
+                                    <li class="mb-2" style="color: #1e293b;"><i data-lucide="check" aria-hidden="true" class="has-text-success mr-2" style="width: 16px; height: 16px;"></i> Built for phpBB 3.3 and ready for 4.0</li>
+                                </ul>
+                            </div>
+
+                            <div class="pt-3 border-top style-card-footer">
+                                <div class="is-flex is-justify-content-space-between is-align-items-center mb-3">
+                                    <div>
+                                        <span class="is-size-7 font-weight-bold display-block" style="color: #475569;">Single License</span>
+                                        <span class="title is-4 has-text-primary mb-0">$19.90</span>
+                                    </div>
+                                    <span class="tag is-light is-rounded font-weight-bold" style="color: #1e293b;">Instant Access</span>
+                                </div>
+                                <a href="https://www.phpbb.com/community/ucp.php?i=pm&mode=compose&u=1065865" target="_blank" rel="noopener noreferrer" class="button is-primary is-fullwidth is-rounded has-text-weight-bold" aria-label="Get WYSIWYG Editor Extension">
+                                    <i data-lucide="shopping-cart" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i>
+                                    <span>Get Extension</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Extension 3: Coming Soon -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 is-flex is-flex-direction-column style-card h-100">
+                            <div class="is-flex is-justify-content-space-between is-align-items-center mb-3">
+                                <span class="tag is-warning is-light is-rounded font-weight-semibold">Coming Soon</span>
+                                <span class="is-size-7 font-weight-bold mono-font" style="color: #1e293b;">In Dev</span>
+                            </div>
+                            
+                            <h3 class="title is-4 mb-2">Next-Gen Extension</h3>
+                            <p class="is-size-6 mb-4" style="color: #334155;">
+                                A new extension currently in development to bring fresh features and capabilities to your phpBB forum.
+                            </p>
+
+                            <div class="box p-4 mb-4 has-background-warning-light has-text-centered" style="border-radius: 10px;">
+                                <i data-lucide="sparkles" aria-hidden="true" class="has-text-warning-dark" style="width: 44px; height: 44px;"></i>
+                                <p class="is-size-7 font-weight-bold mt-2" style="color: #78350f;">In Development</p>
+                            </div>
+
+                            <div class="content is-small mb-5 flex-grow-1">
+                                <ul class="ml-0 pl-0" style="list-style: none;">
+                                    <li class="mb-2" style="color: #1e293b;"><i data-lucide="check" aria-hidden="true" class="has-text-success mr-2" style="width: 16px; height: 16px;"></i> Solid Security & Clean UI</li>
+                                    <li class="mb-2" style="color: #1e293b;"><i data-lucide="check" aria-hidden="true" class="has-text-success mr-2" style="width: 16px; height: 16px;"></i> Full ACP Customization</li>
+                                    <li class="mb-2" style="color: #1e293b;"><i data-lucide="check" aria-hidden="true" class="has-text-success mr-2" style="width: 16px; height: 16px;"></i> Built for phpBB 3.3 and ready for 4.0</li>
+                                </ul>
+                            </div>
+
+                            <div class="pt-3 border-top style-card-footer">
+                                <div class="is-flex is-justify-content-space-between is-align-items-center mb-3">
+                                    <div>
+                                        <span class="is-size-7 font-weight-bold display-block" style="color: #475569;">Single License</span>
+                                        <span class="title is-4 has-text-dark mb-0">$19.90</span>
+                                    </div>
+                                    <span class="tag is-warning is-light is-rounded font-weight-bold">Coming Soon</span>
+                                </div>
+                                <a href="https://www.phpbb.com/community/ucp.php?i=pm&mode=compose&u=1065865" target="_blank" rel="noopener noreferrer" class="button is-dark is-outlined is-fullwidth is-rounded has-text-weight-bold" aria-label="Inquire via PM">
+                                    <i data-lucide="message-square" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i>
+                                    <span>Inquire via PM</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. OPEN SOURCE & phpBB CONTRIBUTIONS SHOWCASE -->
+        <section class="section py-7 has-background-light" id="contributions" aria-labelledby="contributions-title">
+            <div class="container is-max-widescreen">
+                <div class="has-text-centered mb-7">
+                    <span class="tag is-success is-light is-medium is-rounded mb-3">
+                        <i data-lucide="heart" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i>
+                        Community Contributions
+                    </span>
+                    <h2 id="contributions-title" class="title is-2 is-size-3-mobile">
+                        Open Source <span class="has-text-success">phpBB Work</span>
+                    </h2>
+                    <p class="subtitle is-5 mt-3 mx-auto" style="max-width: 640px; color: #334155;">
+                        Some of the translations, extensions, tools, and styles I’ve built for phpBB.
+                    </p>
+                </div>
+
+                <div class="columns is-multiline">
+                    <!-- 1. Brazilian Portuguese Translation -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-success-light has-text-success mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="globe" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">Brazilian Portuguese Translation</h3>
+                                    <span class="tag is-success is-light is-rounded mt-1 font-weight-semibold">Official Language Pack</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-4 flex-grow-1" style="color: #334155;">
+                                Official phpBB language pack bringing full Brazilian Portuguese translation to phpBB.
+                            </p>
+                            <div class="buttons is-flex gap-2">
+                                <a href="https://www.phpbb.com/customise/db/translation/brazilian_portuguese/" target="_blank" rel="noopener noreferrer" class="button is-small is-success is-light is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="external-link" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>phpBB.com</span>
+                                </a>
+                                <a href="https://github.com/suportephpbb/phpbb/" target="_blank" rel="noopener noreferrer" class="button is-small is-dark is-outlined is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="git-branch" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 2. Giphy Extension -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-primary-light has-text-primary mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="image" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">Giphy</h3>
+                                    <span class="tag is-primary is-light is-rounded mt-1 font-weight-semibold">Extension</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-4 flex-grow-1" style="color: #334155;">
+                                Integrates Giphy search picker into phpBB editor, allowing users to insert animated GIFs into posts.
+                            </p>
+                            <div class="buttons is-flex gap-2">
+                                <a href="https://www.phpbb.com/customise/db/extension/giphy/" target="_blank" rel="noopener noreferrer" class="button is-small is-primary is-light is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="external-link" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>phpBB.com</span>
+                                </a>
+                                <a href="https://github.com/vinny/giphy-phpbb" target="_blank" rel="noopener noreferrer" class="button is-small is-dark is-outlined is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="git-branch" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 3. Multiavatar Extension -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-info-light has-text-info mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="smile" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">Multiavatar</h3>
+                                    <span class="tag is-info is-light is-rounded mt-1 font-weight-semibold">Extension</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-4 flex-grow-1" style="color: #334155;">
+                                Automatically generates unique vector avatars for new forum members using Multiavatar algorithm.
+                            </p>
+                            <div class="buttons is-flex gap-2">
+                                <a href="https://www.phpbb.com/customise/db/extension/multiavatar/" target="_blank" rel="noopener noreferrer" class="button is-small is-info is-light is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="external-link" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>phpBB.com</span>
+                                </a>
+                                <a href="https://github.com/vinny/multiavatar" target="_blank" rel="noopener noreferrer" class="button is-small is-dark is-outlined is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="git-branch" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 4. Share On Extension -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-primary-light has-text-primary mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="share-2" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">Share On</h3>
+                                    <span class="tag is-primary is-light is-rounded mt-1 font-weight-semibold">Extension</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-4 flex-grow-1" style="color: #334155;">
+                                Adds customizable social sharing buttons to topics, enabling members to share forum discussions.
+                            </p>
+                            <div class="buttons is-flex gap-2">
+                                <a href="https://www.phpbb.com/customise/db/extension/shareon/" target="_blank" rel="noopener noreferrer" class="button is-small is-primary is-light is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="external-link" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>phpBB.com</span>
+                                </a>
+                                <a href="https://github.com/vinny/share-on" target="_blank" rel="noopener noreferrer" class="button is-small is-dark is-outlined is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="git-branch" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 5. Sidebar Manager Extension -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-warning-light has-text-warning-dark mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="panel-left" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">Sidebar Manager</h3>
+                                    <span class="tag is-warning is-light is-rounded mt-1 font-weight-semibold">Extension</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-4 flex-grow-1" style="color: #334155;">
+                                Flexible sidebar layout system for phpBB with configurable ACP widgets and custom content blocks.
+                            </p>
+                            <div class="buttons is-flex gap-2">
+                                <a href="https://www.phpbb.com/customise/db/extension/sidebar/" target="_blank" rel="noopener noreferrer" class="button is-small is-warning is-light is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="external-link" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>phpBB.com</span>
+                                </a>
+                                <a href="https://github.com/vinny/phpbb-sidebar" target="_blank" rel="noopener noreferrer" class="button is-small is-dark is-outlined is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="git-branch" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 6. Header Menu Extension -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-info-light has-text-info mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="menu" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">Header Menu</h3>
+                                    <span class="tag is-info is-light is-rounded mt-1 font-weight-semibold">Extension</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-4 flex-grow-1" style="color: #334155;">
+                                Allowing administrators to create and manage a custom navigation menu.
+                            </p>
+                            <div class="buttons is-flex gap-2">
+                                <a href="https://www.phpbb.com/community/viewtopic.php?t=2673535" target="_blank" rel="noopener noreferrer" class="button is-small is-info is-light is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="external-link" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>phpBB.com</span>
+                                </a>
+                                <a href="https://github.com/vinny/phpbb-menu" target="_blank" rel="noopener noreferrer" class="button is-small is-dark is-outlined is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="git-branch" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 7. Sortable Categories Extension -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-primary-light has-text-primary mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="arrow-up-down" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">Sortable Categories</h3>
+                                    <span class="tag is-primary is-light is-rounded mt-1 font-weight-semibold">Extension</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-4 flex-grow-1" style="color: #334155;">
+                                Allows members to sort forum categories dynamically.
+                            </p>
+                            <div class="buttons is-flex gap-2">
+                                <a href="https://www.phpbb.com/community/viewtopic.php?t=2672659" target="_blank" rel="noopener noreferrer" class="button is-small is-primary is-light is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="external-link" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>phpBB.com</span>
+                                </a>
+                                <a href="https://github.com/vinny/sortablecategories" target="_blank" rel="noopener noreferrer" class="button is-small is-dark is-outlined is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="git-branch" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 8. EventBoard Calendar Extension -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-success-light has-text-success mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="calendar" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">EventBoard Calendar</h3>
+                                    <span class="tag is-success is-light is-rounded mt-1 font-weight-semibold">Extension</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-4 flex-grow-1" style="color: #334155;">
+                                Event calendar for phpBB with event creation, RSVPs, event reminders, and mini-calendar widgets.
+                            </p>
+                            <div class="buttons is-flex gap-2">
+                                <a href="https://www.phpbb.com/community/viewtopic.php?t=2668954" target="_blank" rel="noopener noreferrer" class="button is-small is-success is-light is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="external-link" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>phpBB.com</span>
+                                </a>
+                                <a href="https://github.com/vinny/phpbb-calendar" target="_blank" rel="noopener noreferrer" class="button is-small is-dark is-outlined is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="git-branch" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 9. Karma System Extension -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-warning-light has-text-warning-dark mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="award" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">Karma System</h3>
+                                    <span class="tag is-warning is-light is-rounded mt-1 font-weight-semibold">Extension</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-4 flex-grow-1" style="color: #334155;">
+                                Reputation voting system allowing members to upvote helpful posts and build community trust.
+                            </p>
+                            <div class="buttons is-flex gap-2">
+                                <a href="https://www.phpbb.com/community/viewtopic.php?t=2671999" target="_blank" rel="noopener noreferrer" class="button is-small is-warning is-light is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="external-link" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>phpBB.com</span>
+                                </a>
+                                <a href="https://github.com/vinny/karma" target="_blank" rel="noopener noreferrer" class="button is-small is-dark is-outlined is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="git-branch" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 10. Advanced URL Rewriting -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-info-light has-text-info mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="link" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">Advanced URL Rewriting</h3>
+                                    <span class="tag is-info is-light is-rounded mt-1 font-weight-semibold">Extension</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-4 flex-grow-1" style="color: #334155;">
+                                Turns standard URLs into clean, readable links.
+                            </p>
+                            <div class="buttons is-flex gap-2">
+                                <a href="https://www.phpbb.com/community/viewtopic.php?t=2669047" target="_blank" rel="noopener noreferrer" class="button is-small is-info is-light is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="external-link" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>phpBB.com</span>
+                                </a>
+                                <a href="https://github.com/vinny/phpbb-url-rewriting" target="_blank" rel="noopener noreferrer" class="button is-small is-dark is-outlined is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="git-branch" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 11. MobilePro Style -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-primary-light has-text-primary mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="palette" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">MobilePro</h3>
+                                    <span class="tag is-primary is-light is-rounded mt-1 font-weight-semibold">Style</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-4 flex-grow-1" style="color: #334155;">
+                                A modern, mobile-first phpBB theme built for phones and fast loading.
+                            </p>
+                            <div class="buttons is-flex gap-2">
+                                <a href="https://www.phpbb.com/community/viewtopic.php?t=2669155" target="_blank" rel="noopener noreferrer" class="button is-small is-primary is-light is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="external-link" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>phpBB.com</span>
+                                </a>
+                                <a href="https://github.com/vinny/phpbb-mobile" target="_blank" rel="noopener noreferrer" class="button is-small is-dark is-outlined is-rounded font-weight-bold flex-grow-1">
+                                    <i data-lucide="git-branch" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 12. phpBB Style Tester -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-info-light has-text-info mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="wrench" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">phpBB Style Tester</h3>
+                                    <span class="tag is-info is-light is-rounded mt-1 font-weight-semibold">Tool</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-4 flex-grow-1" style="color: #334155;">
+                                A simple tool for testing and previewing phpBB styles.
+                            </p>
+                            <div class="buttons is-flex">
+                                <a href="https://github.com/vinny/phpbb-style-tester" target="_blank" rel="noopener noreferrer" class="button is-small is-dark is-outlined is-fullwidth is-rounded font-weight-bold">
+                                    <i data-lucide="git-branch" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CUSTOM phpBB SERVICES -->
+        <section class="section py-7 has-background-white" id="services" aria-labelledby="services-title">
+            <div class="container is-max-widescreen">
+                <div class="has-text-centered mb-7">
+                    <span class="tag is-info is-light is-medium is-rounded mb-3">
+                        <i data-lucide="wrench" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i>
+                        Tailored phpBB Solutions
+                    </span>
+                    <h2 id="services-title" class="title is-2 is-size-3-mobile">
+                        Custom <span class="has-text-info">phpBB Services</span>
+                    </h2>
+                    <p class="subtitle is-5 mt-3 mx-auto" style="max-width: 640px; color: #334155;">
+                        Need custom extensions, updates, migrations, or style tweaks for your forum?
+                    </p>
+                </div>
+
+                <div class="columns is-multiline">
+                    <!-- Service 1: Installation / Update / Configuration -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-primary-light has-text-primary mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="download-cloud" aria-hidden="true" style="width: 28px; height: 28px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-4 mb-0">Installation, Update & Configuration</h3>
+                                </div>
+                            </div>
+
+                            <p class="is-size-6 mb-0 flex-grow-1" style="color: #334155;">
+                                I install and set up phpBB, update boards, tighten security, and make sure everything runs smoothly.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Service 2: Migration / Maintenance -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-info-light has-text-info mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="database" aria-hidden="true" style="width: 28px; height: 28px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-4 mb-0">Migration & Maintenance</h3>
+                                </div>
+                            </div>
+
+                            <p class="is-size-6 mb-0 flex-grow-1" style="color: #334155;">
+                                I handle database migrations carefully, upgrade phpBB versions, keep forums maintained, and make sure your data stays safe.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Service 3: Custom Styles / Extensions -->
+                    <article class="column is-4-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-warning-light has-text-warning-dark mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="palette" aria-hidden="true" style="width: 28px; height: 28px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-4 mb-0">Custom Styles & Extensions</h3>
+                                </div>
+                            </div>
+
+                            <p class="is-size-6 mb-0 flex-grow-1" style="color: #334155;">
+                                I create custom phpBB extensions and styles that match your brand and fit what your community actually needs.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. SUPPORT & DONATIONS SECTION -->
+        <section class="section py-7 has-background-light" id="donate" aria-labelledby="donate-title">
+            <div class="container is-max-widescreen">
+                <div class="has-text-centered mb-7">
+                    <span class="tag is-primary is-light is-medium is-rounded mb-3">
+                        <i data-lucide="heart" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i>
+                        Support What I Build
+                    </span>
+                    <h2 id="donate-title" class="title is-2 is-size-3-mobile">
+                        Help Keep <span class="has-text-primary">These Tools Going</span>
+                    </h2>
+                    <p class="subtitle is-5 mt-3 mx-auto" style="max-width: 640px; color: #334155;">
+                        I build and maintain free phpBB tools for communities around the world. If my work saved you time or helped your forum, consider supporting future updates.
+                    </p>
+                </div>
+
+                <div class="columns is-multiline">
+                    <!-- Option 1: GitHub Sponsors -->
+                    <div class="column is-3-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column text-center-mobile">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-primary-light has-text-primary mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="heart" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">GitHub Sponsors</h3>
+                                    <span class="tag is-primary is-light is-rounded mt-1 font-weight-semibold">Monthly or One-Time</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-4 flex-grow-1" style="color: #334155;">
+                                Sponsor my open-source work directly through GitHub with monthly tiers or one-time contributions.
+                            </p>
+                            <a href="https://github.com/sponsors/vinny" target="_blank" rel="noopener noreferrer" class="button is-primary is-fullwidth is-rounded font-weight-bold">
+                                <i data-lucide="heart" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i>
+                                <span>Sponsor on GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Option 2: Ko-fi -->
+                    <div class="column is-3-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column text-center-mobile">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-warning-light has-text-warning-dark mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="coffee" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">Ko-fi</h3>
+                                    <span class="tag is-warning is-light is-rounded mt-1 font-weight-semibold">Buy Me a Coffee</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-4 flex-grow-1" style="color: #334155;">
+                                A quick and friendly way to show support for free extensions, updates, and community assistance.
+                            </p>
+                            <a href="https://ko-fi.com/vinny1" target="_blank" rel="noopener noreferrer" class="button is-warning is-fullwidth is-rounded font-weight-bold" style="background-color: #b45309; color: #ffffff;">
+                                <i data-lucide="coffee" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i>
+                                <span>Support on Ko-fi</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Option 3: PayPal -->
+                    <div class="column is-3-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-info-light has-text-info mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="credit-card" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">PayPal</h3>
+                                    <span class="tag is-info is-light is-rounded mt-1 font-weight-semibold">Direct Donation</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-3" style="color: #334155;">
+                                Donate directly via PayPal account or card. Scan the QR code or click the button below.
+                            </p>
+                            <div class="has-text-centered my-2">
+                                <img src="img/paypal.png" alt="PayPal Donation QR Code" style="max-width: 130px; height: auto; border-radius: 10px; border: 1.5px solid var(--surface-border); display: inline-block;">
+                            </div>
+                            <a href="https://www.paypal.com/donate/?hosted_button_id=DTLN86K424KV6" target="_blank" rel="noopener noreferrer" class="button is-info is-fullwidth is-rounded font-weight-bold mt-auto" style="background-color: #075985; color: #ffffff;">
+                                <i data-lucide="external-link" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i>
+                                <span>Donate via PayPal</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Option 4: Crypto USDT (TRC20) -->
+                    <div class="column is-3-desktop is-6-tablet">
+                        <div class="box p-5 style-card h-100 is-flex is-flex-direction-column">
+                            <div class="is-flex is-align-items-center mb-3">
+                                <div class="icon-box p-3 has-background-success-light has-text-success mr-3" style="border-radius: 12px;">
+                                    <i data-lucide="coins" aria-hidden="true" style="width: 26px; height: 26px;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="title is-5 mb-0">Crypto USDT</h3>
+                                    <span class="tag is-success is-light is-rounded mt-1 font-weight-semibold">TRC20 Network</span>
+                                </div>
+                            </div>
+                            <p class="is-size-6 mb-3" style="color: #334155;">
+                                Support via cryptocurrency using USDT on the TRC20 network. Scan the wallet QR code below.
+                            </p>
+                            <div class="has-text-centered my-2">
+                                <img src="img/usdt.jpeg" alt="Crypto USDT TRC20 QR Code" style="max-width: 130px; height: auto; border-radius: 10px; border: 1.5px solid var(--surface-border); display: inline-block;">
+                            </div>
+                            <span class="tag is-light is-fullwidth is-rounded font-weight-bold mt-auto" style="color: #1e293b; background-color: #f1f5f9; text-align: center;">
+                                <i data-lucide="qr-code" aria-hidden="true" class="mr-1" style="width: 14px; height: 14px;"></i>
+                                Scan QR Code to Pay
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 7. FOOTER (Footer Landmark) -->
+    <footer class="footer has-background-white" style="border-top: 1px solid var(--surface-border);">
+        <div class="container is-max-widescreen">
+            <div class="columns py-4">
+                <div class="column is-8">
+                    <div class="is-flex is-align-items-center mb-3">
+                        <div class="icon-box p-2 has-background-primary-light has-text-primary mr-2" style="border-radius: 6px;">
+                            <i data-lucide="code-2" aria-hidden="true" style="width: 18px; height: 18px;"></i>
+                        </div>
+                        <strong class="is-size-4 title mb-0 has-text-primary">Vinny</strong>
+                    </div>
+                    <p class="is-size-6" style="max-width: 440px; color: #334155;">
+                        I’ve spent over 15 years working with phpBB, building secure extensions and custom forum solutions.
+                    </p>
+                </div>
+
+                <div class="column is-4">
+                    <h2 class="title is-6 mb-3">Connect</h2>
+                    <ul class="is-size-6" style="list-style: none; padding: 0; margin: 0;">
+                        <li class="mb-2">
+                            <a href="https://github.com/vinny" target="_blank" rel="noopener noreferrer" style="color: #334155; font-weight: 500;" class="is-flex is-align-items-center">
+                                <i data-lucide="git-branch" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i> GitHub Profile
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#home" style="color: #334155; font-weight: 500;" class="is-flex is-align-items-center">
+                                <i data-lucide="arrow-up" aria-hidden="true" class="mr-2" style="width: 16px; height: 16px;"></i> Back to Top
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr style="background-color: var(--surface-border); height: 1px;">
+
+            <div class="is-flex is-justify-content-space-between is-flex-wrap-wrap is-align-items-center gap-2 py-2">
+                <p class="is-size-7 font-weight-semibold mb-0" style="color: #334155;">
+                    &copy; Hosted on GitHub Pages at <a href="https://github.com/vinny/vinny.github.io" target="_blank" rel="noopener noreferrer" style="color: #334155; text-decoration: underline;">vinny.github.io</a>
+                </p>
+                <p class="is-size-7 font-weight-semibold mb-0" style="color: #334155;">
+                    Built with <a href="https://bulma.io/" target="_blank" rel="noopener noreferrer" style="color: #334155; text-decoration: underline;">Bulma</a> & <a href="https://lucide.dev/" target="_blank" rel="noopener noreferrer" style="color: #334155; text-decoration: underline;">Lucide Icons</a>
+                </p>
+            </div>
         </div>
     </footer>
 
+    <!-- JavaScript for Mobile Navbar & Lucide Icons -->
     <script>
-    (function() {
-        // --- INTERNATIONALIZATION (i18n) ---
-        const translations = {
-            'en': {
-                hero_button_about: "About Me",
-                hero_button_projects: "Projects",
-                hero_button_support: "Support",
-                about_title: "👨‍💻 About Me",
-                about_text: "An enthusiast of the phpBB community for over a decade, I have software development as a hobby. I dedicate my free time to creating extensions, styles, and translations, aiming to make forums more accessible and functional for everyone.",
-                projects_title: "🚀 Projects for phpBB",
-                project_translation_title: "🌐 Translation to PT-BR",
-                project_translation_desc: "The official translation that makes phpBB fully accessible to the Portuguese-speaking community.",
-                project_translation_tag1: "Translation",
-                project_translation_tag2: "Localization",
-                project_shareon_title: "🔗 Share On",
-                project_shareon_desc: "Extension that allows sharing forum topics on various social networks with ease.",
-                project_tag_extension: "Extension",
-                project_shareon_tag2: "Social Media",
-                project_ytgallery_title: "🎥 YouTube Videos Gallery",
-                project_ytgallery_desc: "Creates a YouTube video gallery directly in the forum, organizing content visually.",
-                project_giphy_title: "✨ Giphy",
-                project_giphy_desc: "Integrates Giphy's GIF search directly into the post editor, making conversations more dynamic.",
-                project_feedbot_title: "🤖 Feed Post Bot",
-                project_feedbot_desc: "A bot that automatically posts content from RSS/Atom feeds to a specific forum.",
-                project_feedbot_tag2: "Bot",
-                project_feedbot_tag3: "Automation",
-                project_button_view: "View Project",
-                references_title: "🏆 References",
-                ref_item1_title: "phpBB International Support Teams",
-                ref_item1_subtitle: "2011 - present • 13+ years",
-                ref_item1_desc: "Active member of the phpBB international support teams, helping users around the world with technical and administrative issues.",
-                ref_item1_tag1: "Support",
-                ref_item1_tag2: "International",
-                ref_item1_tag3: "Community",
-                ref_item2_title: "phpBB Translator - Brazilian Portuguese",
-                ref_item2_subtitle: "Co-author • 2011 - present",
-                ref_item2_desc: "Co-author of the official phpBB translation into Brazilian Portuguese, responsible for keeping the localization updated and culturally appropriate.",
-                ref_item2_tag1: "Translation",
-                ref_item2_tag2: "Portuguese",
-                ref_item2_tag3: "Localization",
-                ref_item3_title: "phpBB Jr. Style Validators",
-                ref_item3_subtitle: "Jun 2011 - Sep 2011",
-                ref_item3_desc: "Junior phpBB style validator, responsible for ensuring the quality, compatibility, and compliance of submitted themes.",
-                ref_item3_tag1: "Validation",
-                ref_item3_tag2: "Quality Control",
-                ref_item3_tag3: "Styles",
-                ref_item4_title: "phpBB Styles Team Member",
-                ref_item4_subtitle: "Sep 2011 - present • 12+ years",
-                ref_item4_desc: "Official member of the phpBB styles team, developing and maintaining official themes for the platform, as well as reviewing community contributions.",
-                ref_item4_tag1: "Development",
-                ref_item4_tag2: "Design",
-                ref_item4_tag3: "Official Team",
-                ref_item5_title: "Suporte phpBB",
-                ref_item5_subtitle: "Administrator • 2011 - present",
-                ref_item5_desc: "Administrator of the main phpBB support forum in Brazilian Portuguese, offering technical support and managing the community.",
-                ref_item5_tag1: "Administration",
-                ref_item5_tag2: "Community",
-                ref_item5_tag3: "Brazil",
-                ref_item5_button_visit: "Visit Forum",
-                donate_title: "💝 Support My Work",
-                donate_text: "If you like my extensions and styles and want to show appreciation, or support the development of new extensions, you can make a donation.",
-                kofi_button_text: "Support me on Ko-fi",
-                footer_github: "GitHub",
-                footer_twitter: "X",
-                footer_made_with: "Made with"
-            },
-            'es': {
-                hero_button_about: "Sobre Mí",
-                hero_button_projects: "Proyectos",
-                hero_button_support: "Apoyar",
-                about_title: "👨‍💻 Sobre Mí",
-                about_text: "Entusiasta de la comunidad phpBB desde hace más de una década, tengo el desarrollo de software como un pasatiempo. Dedico mi tiempo libre a crear extensiones, estilos y traducciones, con el objetivo de hacer los foros más accesibles y funcionales para todos.",
-                projects_title: "🚀 Proyectos para phpBB",
-                project_translation_title: "🌐 Traducción a PT-BR",
-                project_translation_desc: "La traducción oficial que hace que phpBB sea totalmente accesible para la comunidad de habla portuguesa.",
-                project_translation_tag1: "Traducción",
-                project_translation_tag2: "Localización",
-                project_shareon_title: "🔗 Share On",
-                project_shareon_desc: "Extensión que permite compartir temas del foro en diversas redes sociales con facilidad.",
-                project_tag_extension: "Extensión",
-                project_shareon_tag2: "Redes Sociales",
-                project_ytgallery_title: "🎥 Galería de Videos de YouTube",
-                project_ytgallery_desc: "Crea una galería de videos de YouTube directamente en el foro, organizando el contenido de forma visual.",
-                project_giphy_title: "✨ Giphy",
-                project_giphy_desc: "Integra la búsqueda de GIFs de Giphy directamente en el editor de publicaciones, haciendo las conversaciones más dinámicas.",
-                project_feedbot_title: "🤖 Feed Post Bot",
-                project_feedbot_desc: "Un bot que publica automáticamente contenido de feeds RSS/Atom en un foro específico.",
-                project_feedbot_tag2: "Bot",
-                project_feedbot_tag3: "Automatización",
-                project_button_view: "Ver Proyecto",
-                references_title: "🏆 Referencias",
-                ref_item1_title: "Equipos de Soporte Internacional de phpBB",
-                ref_item1_subtitle: "2011 - presente • 13+ años",
-                ref_item1_desc: "Miembro activo de los equipos de soporte internacional de phpBB, ayudando a usuarios de todo el mundo con problemas técnicos y administrativos.",
-                ref_item1_tag1: "Soporte",
-                ref_item1_tag2: "Internacional",
-                ref_item1_tag3: "Comunidad",
-                ref_item2_title: "Traductor de phpBB - Portugués Brasileño",
-                ref_item2_subtitle: "Coautor • 2011 - presente",
-                ref_item2_desc: "Coautor de la traducción oficial de phpBB al portugués brasileño, responsable de mantener la localización actualizada y culturalmente apropiada.",
-                ref_item2_tag1: "Traducción",
-                ref_item2_tag2: "Portugués",
-                ref_item2_tag3: "Localización",
-                ref_item3_title: "Validadores de Estilos Jr. de phpBB",
-                ref_item3_subtitle: "Jun 2011 - Sep 2011",
-                ref_item3_desc: "Validador júnior de estilos de phpBB, responsable de garantizar la calidad, compatibilidad y conformidad de los temas enviados.",
-                ref_item3_tag1: "Validación",
-                ref_item3_tag2: "Control de Calidad",
-                ref_item3_tag3: "Estilos",
-                ref_item4_title: "Miembro del Equipo de Estilos de phpBB",
-                ref_item4_subtitle: "Sep 2011 - presente • 12+ años",
-                ref_item4_desc: "Miembro oficial del equipo de estilos de phpBB, desarrollando y manteniendo temas oficiales para la plataforma, además de revisar contribuciones de la comunidad.",
-                ref_item4_tag1: "Desarrollo",
-                ref_item4_tag2: "Diseño",
-                ref_item4_tag3: "Equipo Oficial",
-                ref_item5_title: "Suporte phpBB",
-                ref_item5_subtitle: "Administrador • 2011 - presente",
-                ref_item5_desc: "Administrador del principal foro de soporte de phpBB en portugués brasileño, ofreciendo soporte técnico y gestionando la comunidad.",
-                ref_item5_tag1: "Administración",
-                ref_item5_tag2: "Comunidad",
-                ref_item5_tag3: "Brasil",
-                ref_item5_button_visit: "Visitar Foro",
-                donate_title: "💝 Apoya Mi Trabajo",
-                donate_text: "Si te gustan mis extensiones y estilos y quieres mostrar tu aprecio, o apoyar el desarrollo de nuevas extensiones, puedes hacer una donación.",
-                kofi_button_text: "Apoyar en Ko-fi",
-                footer_github: "GitHub",
-                footer_twitter: "X",
-                footer_made_with: "Hecho con"
-            },
-            'pt-BR': {
-                hero_button_about: "Sobre Mim",
-                hero_button_projects: "Projetos",
-                hero_button_support: "Apoiar",
-                about_title: "👨‍💻 Sobre Mim",
-                about_text: "Entusiasta da comunidade phpBB há mais de uma década, tenho o desenvolvimento de software como um hobby. Dedico meu tempo livre à criação de extensões, estilos e traduções, com o objetivo de tornar os fóruns mais acessíveis e funcionais para todos.",
-                projects_title: "🚀 Projetos para phpBB",
-                project_translation_title: "🌐 Tradução para PT-BR",
-                project_translation_desc: "A tradução oficial que torna o phpBB totalmente acessível para a comunidade de língua portuguesa.",
-                project_translation_tag1: "Tradução",
-                project_translation_tag2: "Localização",
-                project_shareon_title: "🔗 Share On",
-                project_shareon_desc: "Extensão que permite compartilhar tópicos do fórum em diversas redes sociais com facilidade.",
-                project_tag_extension: "Extensão",
-                project_shareon_tag2: "Redes Sociais",
-                project_ytgallery_title: "🎥 YouTube Videos Gallery",
-                project_ytgallery_desc: "Cria uma galeria de vídeos do YouTube diretamente no fórum, organizando o conteúdo de forma visual.",
-                project_giphy_title: "✨ Giphy",
-                project_giphy_desc: "Integra a busca de GIFs do Giphy diretamente no editor de postagens, tornando as conversas mais dinâmicas.",
-                project_feedbot_title: "🤖 Feed Post Bot",
-                project_feedbot_desc: "Um bot que posta automaticamente conteúdo de feeds RSS/Atom em um fórum específico.",
-                project_feedbot_tag2: "Bot",
-                project_feedbot_tag3: "Automação",
-                project_button_view: "Ver Projeto",
-                references_title: "🏆 Referências",
-                ref_item1_title: "phpBB International Support Teams",
-                ref_item1_subtitle: "2011 - presente • 13+ anos",
-                ref_item1_desc: "Membro ativo das equipes internacionais de suporte do phpBB, ajudando usuários ao redor do mundo com questões técnicas e administrativas.",
-                ref_item1_tag1: "Support",
-                ref_item1_tag2: "International",
-                ref_item1_tag3: "Community",
-                ref_item2_title: "phpBB Translator - Português Brasileiro",
-                ref_item2_subtitle: "Co-autor • 2011 - presente",
-                ref_item2_desc: "Co-autor da tradução oficial do phpBB para português brasileiro, responsável por manter a localização atualizada e culturalmente apropriada.",
-                ref_item2_tag1: "Translation",
-                ref_item2_tag2: "Portuguese",
-                ref_item2_tag3: "Localization",
-                ref_item3_title: "phpBB Jr. Style Validators",
-                ref_item3_subtitle: "Jun 2011 - Set 2011",
-                ref_item3_desc: "Validador júnior de estilos phpBB, responsável por garantir qualidade, compatibilidade e conformidade dos temas submetidos.",
-                ref_item3_tag1: "Validation",
-                ref_item3_tag2: "Quality Control",
-                ref_item3_tag3: "Styles",
-                ref_item4_title: "phpBB Styles Team Member",
-                ref_item4_subtitle: "Set 2011 - presente • 12+ anos",
-                ref_item4_desc: "Membro oficial da equipe de estilos do phpBB, desenvolvendo e mantendo temas oficiais para a plataforma, além de revisar contribuições da comunidade.",
-                ref_item4_tag1: "Development",
-                ref_item4_tag2: "Design",
-                ref_item4_tag3: "Official Team",
-                ref_item5_title: "Suporte phpBB",
-                ref_item5_subtitle: "Administrador • 2011 - presente",
-                ref_item5_desc: "Administrador do principal fórum de suporte phpBB em português brasileiro, oferecendo suporte técnico e gerenciando a comunidade.",
-                ref_item5_tag1: "Administration",
-                ref_item5_tag2: "Community",
-                ref_item5_tag3: "Brazil",
-                ref_item5_button_visit: "Visitar Fórum",
-                donate_title: "💝 Apoie Meu Trabalho",
-                donate_text: "Se você gosta das minhas extensões e estilos e quer demonstrar apreço, ou apoiar o desenvolvimento de novas extensões, você pode fazer uma doação.",
-                kofi_button_text: "Apoiar no Ko-fi",
-                footer_github: "GitHub",
-                footer_twitter: "X",
-                footer_made_with: "Feito com"
-            }
-        };
-
-        function getLanguage() {
-            const userLang = navigator.language || navigator.userLanguage || 'en';
-            if (userLang.startsWith('es')) return 'es';
-            if (userLang.startsWith('pt')) return 'pt-BR';
-            return 'en';
-        }
-
-        function translatePage(lang) {
-            try {
-                const langDict = translations[lang] || translations['en'];
-                document.querySelectorAll('[data-translate]').forEach(el => {
-                    const key = el.getAttribute('data-translate');
-                    const text = langDict[key] || translations['en'][key];
-                    if (text !== undefined) {
-                        el.innerHTML = text;
-                    } else {
-                        console.warn(`Translation key not found: ${key} for lang: ${lang}`);
-                    }
-                });
-                document.documentElement.lang = lang;
-            } catch (error) {
-                console.error("Failed to translate page:", error);
-            }
-        }
-
-        function setupEventListeners() {
-             // Progress Bar
-            window.addEventListener('scroll', () => {
-                const progressBar = document.getElementById('progressBar');
-                if (progressBar) {
-                    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-                    if (scrollableHeight > 0) {
-                        const scrolled = (window.scrollY / scrollableHeight) * 100;
-                        progressBar.style.width = Math.min(scrolled, 100) + '%';
-                    }
-                }
-            });
-
-            // Smooth scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            });
-
-            // Animation observers
-            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('visible');
-                });
-            }, observerOptions);
-
-            const staggerObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => entry.target.classList.add('visible'), index * 200);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
-            document.querySelectorAll('.stagger-item').forEach(el => staggerObserver.observe(el));
-            
-            // Typewriter effect cleanup
-            setTimeout(() => {
-                const typewriter = document.querySelector('.typewriter');
-                if (typewriter) typewriter.style.borderRight = 'none';
-            }, 4000);
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
-            try {
-                const lang = getLanguage();
-                translatePage(lang);
-                setupEventListeners();
-            } catch (error) {
-                console.error("An error occurred during page initialization:", error);
+            // Navbar Burger Toggle
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+                    const isExpanded = el.getAttribute('aria-expanded') === 'true';
+                    
+                    el.setAttribute('aria-expanded', !isExpanded);
+                    el.classList.toggle('is-active');
+                    if ($target) $target.classList.toggle('is-active');
+                });
+            });
+
+            // Initialize Lucide Icons
+            if (window.lucide) {
+                lucide.createIcons();
             }
         });
-
-    })();
     </script>
 </body>
 </html>
